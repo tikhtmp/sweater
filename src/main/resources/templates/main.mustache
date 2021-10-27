@@ -1,0 +1,31 @@
+<html>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign Out"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    </form>
+</div>
+<div>
+    <form method="post">
+        <input type="text" name="name" placeholder="Input abonent's name ">
+        <input type="text" name="phone" placeholder="Input abonent's phone">
+        <button type="submit">Add abonent</button>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    </form>
+</div>
+<form method="post" action="filter">
+    <input type="text" name="filter">
+    <button type="submit">Find</button>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+</form>
+<div>list of abonents</div>
+{{#abonents}}
+<div>
+    <b>{{id}}</b>
+    <b>{{name}}</b>
+    <b>{{phone}}</b>
+</div>
+{{/abonents}}
+</body>
+</html>
