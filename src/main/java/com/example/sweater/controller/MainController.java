@@ -1,4 +1,4 @@
-package com.example.sweater;
+package com.example.sweater.controller;
 
 import com.example.sweater.domain.Abonent;
 import com.example.sweater.repos.AbonentRepo;
@@ -13,17 +13,12 @@ import java.util.Map;
 
 
 @Controller
-    public class GreetingController {
+    public class MainController {
     @Autowired
     private AbonentRepo abonentRepo;
 
         @GetMapping("/")
-        public String greeting(
-                //@RequestParam(name = "name", required = false, defaultValue = "World") String name,
-                //Model model) {
-                Map<String, Object> model) {
-            // model.addAttribute("name", name);
-            //model.put("name", name);
+        public String greeting(Map<String, Object> model) {
             return "greeting";
         }
 
